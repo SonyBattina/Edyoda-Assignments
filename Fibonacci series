@@ -1,0 +1,13 @@
+#fibonacci number series:
+
+i=0
+j=1
+n=int(input('enter a value: '))#total no of fib numbers
+count=0
+while count<n:
+    print(i)
+    k=i+j
+    i=j
+    j=k
+    count=count+1
+    print()

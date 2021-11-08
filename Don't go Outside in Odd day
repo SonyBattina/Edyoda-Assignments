@@ -1,4 +1,4 @@
-#count of number of even and odd numbers 
+# Write a Python program to count the number of even and odd numbers from a series of numbers.
 
 n=int(input('enter the value: '))
 count_even=0

@@ -1,4 +1,4 @@
-#fibonacci number series:
+#Write a Python program to get the Fibonacci series between 0 to 50
 
 i=0
 j=1

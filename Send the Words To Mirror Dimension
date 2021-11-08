@@ -1,0 +1,4 @@
+# Write a Python program that accepts a word from the user and reverse it
+
+a=input("enter the word: ")
+print('The reversed word is: ',a[len(a)::-1]) 

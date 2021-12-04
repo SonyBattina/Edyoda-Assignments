@@ -1,0 +1,5 @@
+#Write a Python program to square the elements of a list using map() function.
+
+def f(x):
+    return x**2
+list(map(f,[4,5,2,9]))

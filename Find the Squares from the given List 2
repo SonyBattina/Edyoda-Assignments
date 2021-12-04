@@ -2,4 +2,5 @@
 
 def f(x):
     return x**2
-list(map(f,[4,5,2,9]))
+l=[4,5,2,9]
+list(map(f,l))

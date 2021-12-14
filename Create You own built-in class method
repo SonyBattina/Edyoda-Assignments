@@ -1,0 +1,12 @@
+#Write a Python class to implement pow(x, n)
+
+class power:
+    def find(self,x,nth):
+        power = pow(x,nth)
+        return power
+        
+x = int(input("enter the value: "))
+nth = int(input("enter the power: "))
+n = power()
+n1 = n.find(x,nth)
+print(n1)

@@ -1,6 +1,6 @@
 create table salespeople(Snum int(4),Sname varchar(15),Scity varchar(10),comm int(3));
 insert into salespeople values(1001,"peel","London",12),(1002,"Serres","Sanjose",13),
-(1004,"Motika","London",11),(1007,"Rifkin","Barcelona",15),(1003,"Axelrod","Newyork",10);
+(1004,"Motika","london",11),(1007,"Rifkin","Barcelona",15),(1003,"Axelrod","Newyork",10);
 create table customers(Cnum int(4),Cname varchar(15),City varchar(10),Snum int(4));
 insert into customers values(2001,"Hoffman","London",1001),(2002,"Giovanni","Rome",1003),(2003,"Liu","Sanjose",1002),
 (2004,"Grass","Berlin",1002),(2006,"Clemens","London",1001),(2008,"Cisneros","Sanjose",1007),(2007,"Pereira","Rome",1004);
@@ -11,12 +11,15 @@ insert into orders values (3001,18.69,"3-10-1990",2008,1007),(3003,767.19,"3-10-
 select * from salespeople;
 select * from customers;
 select * from orders;
-Select * FRom salespeople WHERE Sname LIKE 'A%';
-Select Snum,sum(Amt) FRom orders GRoup by Snum;
+--1. Count the number of Salesperson whose name begin with ‘a’/’A’.
+Select count(*) FRom salespeople WHERE Sname LIKE 'A%' or Sname LIKE 'a%' ;
+--2  Display all the Salesperson whose all orders worth is more than Rs. 2000.
+select Snum,sum(Amt) FRom orders GRoup by Snum;
 select salespeople.Sname,orders.Amt from orders inner join salespeople on orders.Snum = salespeople.Snum where orders.Amt > 2000;
-SElect count(sname) from salespeople where Scity='Newyork';
-SElect count(sname) from salespeople where Scity='London' or Scity='paris';
+--3  Count the number of Salesperson belonging to Newyork.
+select count(sname) from salespeople where Scity='Newyork';
+--4  Display the number of Salespeople belonging to London and belonging to Paris.
+select count(sname) from salespeople where Scity='London' or Scity='london' or Scity='paris';
+--5 Display the number of orders taken by each Salesperson and their date of orders.
 select salespeople.Sname, count(*), orders.odate from SalesPeople
 inner join Orders on SalesPeople.Snum = orders.Snum group by SalesPeople.Sname,orders.Odate;
-
-
